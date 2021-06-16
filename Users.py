@@ -9,6 +9,12 @@ userList.append({"IDNumber": "05", "isLibrarian": False, "Username": "PeterO'Nei
 userList.append({"IDNumber": "06", "isLibrarian": False, "Username": "DeclanKennedy", "Password": "2821", "Name":"Declan", "Surname": "Kennedy", "BorrewedBooks":[6,8,9]})
 userList.append({"IDNumber": "07", "isLibrarian": True, "Username": "RyleeLynch", "Password": "0415", "Name":"Rylee", "Surname": "Lynch", "BorrewedBooks":[3]})
 
-print(userList)
+def DisplayUsers():
+    print("Library Users:")
+    print("===========================================================")
+    print(f"Id".ljust(8), "Username".ljust(20), "Name".ljust(20), "Surname".ljust(20))
+    print("===========================================================")
+    for user in userList:
+        print(f"{user['IDNumber'].ljust(8)} {user['Username'].ljust(20)} {user['Name'].ljust(20)} {user['Surname'].ljust(20)}")
 
-
+DisplayUsers()
