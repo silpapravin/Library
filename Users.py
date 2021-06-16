@@ -1,3 +1,4 @@
+UsersList = []
 user1 = {"IDNumber": "01", "Name":"Ivan", "Surname": "Cooper", "BorrewedBooks":[]}
 user2 = {"IDNumber": "02", "Name":"Fiona", "Surname": "Murphy", "BorrewedBooks":[1,2]}
 user3 = {"IDNumber": "03", "Name":"Aoife", "Surname": "Walsh", "BorrewedBooks":[4]}
