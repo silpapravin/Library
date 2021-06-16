@@ -13,6 +13,7 @@ def LoginMenu():
       UserLogin()
     return
 def UserLogin():
+    found=False
     user_list=[]
     user_list.append({"username": "silpa", "password": "aaa",})
     user_list.append({"username": "bruna", "password": "bbb",})
@@ -25,9 +26,14 @@ def UserLogin():
     pass_word=input("Enter password:  ")
     for pw in user_list:
         if (pw['password'].find(pass_word)!=-1):
-           break
-
-    print("Login Sucesssful")
+            found=True
+            break
+    if (found==True):
+        print("Login Sucesssful")
+        #DisplayMainmenu()
+    else:
+        print("Login Unsuccessful")
+        #UserLogin()
         
 
 LoginMenu()
