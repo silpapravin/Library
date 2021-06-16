@@ -12,6 +12,8 @@ def generalSearch():
     
     searchTerm = input("What would you like to search?\n").capitalize()
     search_list = 0
+    print("================================================")
+    print("Results:\n")
 
     for book in booklist:
         if(book['title'].find(searchTerm) != -1):
@@ -21,6 +23,6 @@ def generalSearch():
             continue
 
     if search_list == 0:
-        print('No results')
+        print(f'There are no books with this word')
 
         
