@@ -1,6 +1,5 @@
 userList = []
 
-userList.append(userList)
 
 userList.append({"IDNumber": "01", "isLibrarian": False, "Username": "IvanCooper", "Password": "1237", "Name":"Ivan", "Surname": "Cooper", "BorrewedBooks":[]})
 userList.append({"IDNumber": "02", "isLibrarian": False, "Username": "FionaMurphy", "Password": "2450", "Name":"Fiona", "Surname": "Murphy", "BorrewedBooks":[1,2]})
