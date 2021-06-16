@@ -22,18 +22,21 @@ def UserLogin():
     user_name=input("Enter Username:  ")
     for user in user_list:
         if (user['username'].find(user_name)!=-1):
-           break
-    pass_word=input("Enter password:  ")
-    for pw in user_list:
-        if (pw['password'].find(pass_word)!=-1):
-            found=True
-            break
+           pass_word=input("Enter password:  ")
+           if (user['password'].find(pass_word)!=-1):
+              found=True
+              break
+           else:
+               found=False
+               break
+          
     if (found==True):
         print("Login Sucesssful")
         #DisplayMainmenu()
     else:
         print("Login Unsuccessful")
         #UserLogin()
+    return
         
 
 LoginMenu()
