@@ -11,7 +11,9 @@ def LoginMenu():
     choice=int(input("Enter your choice:  "))
     if(choice==1):
       UserLogin()
-    return
+    else:
+      print("Contact your library for new registration")
+
 def UserLogin():
     found=False
     user_list=[]
@@ -37,6 +39,8 @@ def UserLogin():
         print("Login Unsuccessful")
         #UserLogin()
     return
+
+#calling function
         
 
 LoginMenu()
