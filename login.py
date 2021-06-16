@@ -24,14 +24,20 @@ def UserLogin():
            pass_word=input("Enter password:  ")
            if (user['Password'].find(pass_word)!=-1):
               found=True
+              status=user['isLibrarian']
               break
            else:
                found=False
                break
           
     if (found==True):
-        print("Login Sucesssful") 
-        #DisplayMainmenu()
+        print("Login Sucesssful")
+        if (status=="True"): 
+           #DisplayAdminmenu()
+           print("")
+        else:
+            #DisplayUsermenu
+            print("")
     else:
         print("Login Unsuccessful")
         #UserLogin()
