@@ -19,9 +19,14 @@ booklist.append({"title": "The Lord of The Rings", "author": " J.R.R. Tolkien", 
 booklist.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "onloan": False})
 booklist.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry", "onloan": False})
 booklist.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "onloan": False})
-searchTerm = "Are"
+def generalSearch():
+    
+    searchTerm = input("What would you like to search?\n").capitalize()
 
-for book in booklist:
-    print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {str(book['onloan'])}")
-    if(book['title'].find(searchTerm) != -1):
-        print(f"    Contains '{searchTerm}'")
+    for book in booklist:
+        if(book['title'].find(searchTerm) != -1):
+            print(f"    Contains '{searchTerm}'")
+            print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {str(book['onloan'])}")
+        else:
+            print("No books with this keyword")
+            continue
