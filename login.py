@@ -8,7 +8,7 @@ def LoginMenu():
     ClearScreen()
     print("Menu Options")
     print(" 1:  User Login")
-    print(" 2:  User Registration")
+    print(" 2:  User Registration (not supported)")
     choice=int(input("Enter your choice:  "))
     if(choice==1):
       UserLogin()
