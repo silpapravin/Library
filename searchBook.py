@@ -17,6 +17,7 @@ def generalSearch():
             print(f"    Contains '{searchTerm}'")
             print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {str(book['onloan'])}")
         else:
+            print("No books with this keyword")
             continue
         
         
