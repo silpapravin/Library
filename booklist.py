@@ -22,3 +22,5 @@ booklist.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "
 booklist.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry", "onloan": False})
 booklist.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "onloan": False})
 
+for book in booklist:
+    print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {str(book['onloan'])}")
