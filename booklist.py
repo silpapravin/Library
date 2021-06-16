@@ -22,5 +22,14 @@ booklist.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "
 booklist.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry","ID": "5664", "onloan": True})
 booklist.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "ID": "5536", "onloan": False})
 
-for book in booklist:
-    print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {book['ID']} {str(book['onloan'])}")
+def displayBooks():
+    print("Books:")
+    print("===========================================================================================================")
+    print(f"Title".ljust(50), "Author".ljust(30), "ID".ljust(20), "Onloan".ljust(20))
+    print("===========================================================================================================")
+    
+    for book in booklist:
+        print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(20)} {str(book['onloan'])}")
+        
+
+displayBooks()

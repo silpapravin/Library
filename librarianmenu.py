@@ -18,29 +18,27 @@ def displayLibrarianMenu():
     print("5.See all books")
     print("6. Exit\n")
     
-    return input("Please choose an option (1-6): \n")
+    choice= input("Please choose an option (1-6): \n")
 
-selection = "0"
+    while(choice != "6"):
+        clearScreen()
+        if(choice == "1"):
+            print("You selected Option one!\n")
+            print("===============================")
+            generalSearch()
+            input("Return to continue...")
+        elif(choice == "2"):
+            print("You selected Option two!\n")
+            input("Return to continue...")
 
-while(selection != "6"):
-    selection = displayLibrarianMenu()
-    clearScreen()
-    if(selection == "1"):
-        print("You selected Option one!\n")
-        print("===============================")
-        generalSearch()
-        input("Return to continue...")
-    elif(selection == "2"):
-        print("You selected Option two!\n")
-        input("Return to continue...")
-    elif(selection == "3"):
-        print("You selected Option three!\n")
-        input("Return to continue...")
-    elif(selection == "4"):
-        print("You selected Option four!\n")
-        input("Return to continue...")
-    elif(selection != "5"):
-        print("Please return to menu and select a digit from 1 to 6")
-        input("Return to continue...")
+        elif (choice == "3"):
+            print("You selected Option three!\n")
+            input("Return to continue...")
+        elif(choice == "4"):
+            print("You selected Option four!\n")
+            input("Return to continue...")
+        elif(choice != "5"):
+            print("Please return to menu and select a digit from 1 to 6")
+            input("Return to continue...")
 
-print("Bye!")
+        print("Bye!")

@@ -1,8 +1,11 @@
 import os
 import Users
+import usermenu
+import librarianmenu
 
 def ClearScreen():
-   os.system('cls')
+    os.system('cls')
+   
 
 def LoginMenu():
     ClearScreen()
@@ -33,10 +36,10 @@ def UserLogin():
     if (found==True):
         print("Login Sucesssful")
         if (status=="True"): 
-           #DisplayAdminmenu()
+           librarianmenu.displayLibrarianMenu()
            print("")
         else:
-            #DisplayUsermenu
+            usermenu.displayUserMenu()
             print("")
     else:
         print("Login Unsuccessful")
@@ -46,4 +49,4 @@ def UserLogin():
 #calling function
         
 
-LoginMenu()
+
