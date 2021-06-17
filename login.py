@@ -31,9 +31,9 @@ def user_login():
     found=False
     user_name=input("Enter Username:  ")
     for user in user_list:
-        if (user['Username'].find(user_name)!=-1):
+        if (user['Username']==user_name):
            pass_word=input("Enter password:  ")
-           if (user['Password'].find(pass_word)!=-1):
+           if (user['Password']==pass_word):
               found=True
               status=user['isLibrarian']
               active_user=user
@@ -66,11 +66,12 @@ def newRegistration():
     firstname=input("Enter First Name :")
     surname=input("Enter Surname :")
     books=[]
-    user_list.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
+    user_list.append({"IDNumber": count, "isLibrarian": False, "Username": user_name, "Password": pass_word, "Name":firstname, "Surname": surname, "BorrewedBooks":[]})
     print("Welcome  ",firstname)
-    print("Your registration is successful and it may take 24 hours to activate your account ")
-
+    print("Please Login to your account")
+    user_login()
+    
 #calling function
         
- #login_menu()
+#login_menu()
 
