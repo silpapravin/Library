@@ -35,7 +35,7 @@ def displayBooks():
 displayBooks()
 
 #Display Currently Borrowing Books:
-def CurrentlyBorrowing(): 
+def currently_borrowing(): 
     print("\n\n===================================================================================================================")
     print("Currently Borrowing Books")
     print("===================================================================================================================")
@@ -47,4 +47,4 @@ def CurrentlyBorrowing():
             print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(20)} {str(book['onloan'])}")
             #print("===================================================================================================================")
 
-CurrentlyBorrowing ()
+currently_borrowing ()
