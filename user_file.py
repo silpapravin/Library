@@ -1,15 +1,18 @@
-import book_list
+from login import login_menu
+import login
 
-user_list = []
 
+user_list = [] 
 
-user_list.append({"IDNumber": "01", "isLibrarian": False, "Username": "IvanCooper", "Password": "1237", "Name":"Ivan", "Surname": "Cooper", "BorrewedBooks":[7006, 1200]})
-user_list.append({"IDNumber": "02", "isLibrarian": False, "Username": "FionaMurphy", "Password": "2450", "Name":"Fiona", "Surname": "Murphy", "BorrewedBooks":[]})
-user_list.append({"IDNumber": "03", "isLibrarian": False, "Username": "AoifeWalsh", "Password": "2753", "Name":"Aoife", "Surname": "Walsh", "BorrewedBooks":[3005]})
-user_list.append({"IDNumber": "04", "isLibrarian": False, "Username": "BrendanO'Brien", "Password": "2745", "Name":"Brendan", "Surname": "O'Brien", "BorrewedBooks":[]})
-user_list.append({"IDNumber": "05", "isLibrarian": False, "Username": "PeterO'Neill", "Password": "2457", "Name":"Peter", "Surname": "O'Neill", "BorrewedBooks":[4554]})
-user_list.append({"IDNumber": "06", "isLibrarian": False, "Username": "DeclanKennedy", "Password": "2821", "Name":"Declan", "Surname": "Kennedy", "BorrewedBooks":[]})
-user_list.append({"IDNumber": "07", "isLibrarian": True, "Username": "RyleeLynch", "Password": "0415", "Name":"Rylee", "Surname": "Lynch", "BorrewedBooks":[1234, 5664]})
+def add_users():
+  
+    user_list.append({"IDNumber": "01", "isLibrarian": False, "Username": "IvanCooper", "Password": "1237", "Name":"Ivan", "Surname": "Cooper", "BorrewedBooks":["7006", "1200"]})
+    user_list.append({"IDNumber": "02", "isLibrarian": False, "Username": "FionaMurphy", "Password": "2450", "Name":"Fiona", "Surname": "Murphy", "BorrewedBooks":[]})
+    user_list.append({"IDNumber": "03", "isLibrarian": False, "Username": "AoifeWalsh", "Password": "2753", "Name":"Aoife", "Surname": "Walsh", "BorrewedBooks":["3005"]})
+    user_list.append({"IDNumber": "04", "isLibrarian": False, "Username": "BrendanO'Brien", "Password": "2745", "Name":"Brendan", "Surname": "O'Brien", "BorrewedBooks":[]})
+    user_list.append({"IDNumber": "05", "isLibrarian": False, "Username": "PeterO'Neill", "Password": "2457", "Name":"Peter", "Surname": "O'Neill", "BorrewedBooks":["4554"]})
+    user_list.append({"IDNumber": "06", "isLibrarian": False, "Username": "DeclanKennedy", "Password": "2821", "Name":"Declan", "Surname": "Kennedy", "BorrewedBooks":[]})
+    user_list.append({"IDNumber": "07", "isLibrarian": True, "Username": "RyleeLynch", "Password": "0415", "Name":"Rylee", "Surname": "Lynch", "BorrewedBooks":["1234", "5664"]})
 
 def display_users():
     print("Library users:")
@@ -22,11 +25,8 @@ def display_users():
 
 #display_users()
 
-
-
-
 #Display Currently Borrowing Books:
-def currently_borrowing(): 
+def all_borrowed_book(): 
     print("\n\n===================================================================================================================")
     print("users with Borrowed Books:")
     print("===================================================================================================================")
@@ -38,4 +38,9 @@ def currently_borrowing():
             print(f"{user['IDNumber'].ljust(8)} {user['Username'].ljust(20)} {user['Name'].ljust(20)} {user['Surname'].ljust(20)} {str(user['BorrewedBooks']).ljust(10)}") 
             #print("===================================================================================================================")
 
-#currently_borrowing ()
+def user_currently_borrowing():
+    user=login.active_user
+    for book in user['BorrowedBooks']:
+        print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(30)} {str(book['onloan'])}")
+
+

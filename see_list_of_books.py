@@ -1,12 +1,10 @@
-import os
-from search_book import general_search
 
-user_list =["Silpa", "Megan", "Bruna", "Sumaya"]
+import search_book
+
+book_list = []
 
 def loadbook_list():
-    book_list = []
-
-
+    
     book = {"title": "Where The Wild Things Are", "author": "Maurice Sendak", "ID": "9009", "onloan": False}
     book_list.append(book)
     book_list.append({"title": "The Very Hungry Caterpillar", "author": "Eric Carle","ID": "8008", "onloan": False})
@@ -26,19 +24,16 @@ def loadbook_list():
     book_list.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "ID": "3993","onloan": False})
     book_list.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry","ID": "5664", "onloan": True})
     book_list.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "ID": "5536", "onloan": False})
-    return book_list
+    
 
 def printbook_list():
-    book_list = loadbook_list()
     for book in book_list:
-        print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {book['ID']} {str(book['onloan'])}")
+        print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(30)} {str(book['onloan'])}")
+        
 
 
-print(f"Welcome {user_list[0]}! take a look at what's available to borrow here:")
-printbook_list()
 
 
-print("\nCan't find what you're looking for, try here")
-general_search()
+
 
   
