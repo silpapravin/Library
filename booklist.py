@@ -16,20 +16,35 @@ booklist.append({"title": "Alice's Adventures in Wonderland", "author": "Lewis C
 booklist.append({"title": "The Hobbit", "author": "J.R.R. Tolkien", "ID": "4554", "onloan": True})
 booklist.append({"title": "And Then There Were None", "author": "Agatha Christie", "ID": "6432", "onloan": False})
 booklist.append({"title": "Harry Potter", "author": "J.K. Rowling", "ID": "3221", "onloan": False})
-booklist.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry", "ID": "1234", "onloan": True})
+booklist.append({"title": "The Little Prince", "author": "Antoine de Saint-Exupéry", "ID": "1234", "onloan": True})
 booklist.append({"title": "The Lord of The Rings", "author": " J.R.R. Tolkien", "ID": "8899", "onloan": False})
 booklist.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "ID": "3993","onloan": False})
-booklist.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry","ID": "5664", "onloan": True})
+booklist.append({"title": "The Little Prince", "author": "Antoine de Saint-Exupéry","ID": "5664", "onloan": True})
 booklist.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "ID": "5536", "onloan": False})
 
 def displayBooks():
     print("Books:")
-    print("===========================================================================================================")
+    print("=============================================================================================================")
     print(f"Title".ljust(50), "Author".ljust(30), "ID".ljust(20), "Onloan".ljust(20))
-    print("===========================================================================================================")
+    print("=============================================================================================================")
     
     for book in booklist:
         print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(20)} {str(book['onloan'])}")
         
 
 displayBooks()
+
+#Display Currently Borrowing Books:
+def CurrentlyBorrowing(): 
+    print("\n\n===================================================================================================================")
+    print("Currently Borrowing Books")
+    print("===================================================================================================================")
+    print(f"Title".ljust(50), "Author".ljust(30), "ID".ljust(20), "Borrowed Book".ljust(15))
+    print("===================================================================================================================")
+
+    for book in booklist:
+        if book ['onloan']:
+            print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(20)} {str(book['onloan'])}")
+            #print("===================================================================================================================")
+
+CurrentlyBorrowing ()
