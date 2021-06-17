@@ -5,8 +5,6 @@ user_list =["Silpa", "Megan", "Bruna", "Sumaya"]
 
 def loadbook_list():
     book_list = []
-
-
     book = {"title": "Where The Wild Things Are", "author": "Maurice Sendak", "ID": "9009", "onloan": False}
     book_list.append(book)
     book_list.append({"title": "The Very Hungry Caterpillar", "author": "Eric Carle","ID": "8008", "onloan": False})
