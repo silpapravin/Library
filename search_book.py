@@ -18,4 +18,6 @@ def general_search():
     if search_list == 0:
         print(f'There are no books with this word')
 
-        
+    input("Return to continue...")
+
+general_search()   

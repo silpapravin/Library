@@ -1,5 +1,5 @@
 import os
-import users
+import user_file
 import user_menu
 import librarian_menu
 
@@ -24,7 +24,7 @@ def login_menu():
 
 def user_login():
     found=False
-    user_list=users.user_list
+    user_list=user_file.user_list
     user_name=input("Enter Username:  ")
     for user in user_list:
         if (user['Username'].find(user_name)!=-1):
@@ -52,7 +52,7 @@ def user_login():
     return
 
 def newRegistration():
-    user_list=users.user_list()
+    user_list=user_file.user_list()
     count=len(user_list)
     count=count+1
     print(" Enter registration details")
@@ -62,7 +62,7 @@ def newRegistration():
     firstname=input("Enter First Name :")
     surname=input("Enter Surname :")
     books=[]
-    users.userList.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
+    user_file.userList.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
     print("New customer registered")
 
 #calling function
