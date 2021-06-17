@@ -24,18 +24,16 @@ def loadbook_list():
     book_list.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "ID": "3993","onloan": False})
     book_list.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry","ID": "5664", "onloan": True})
     book_list.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "ID": "5536", "onloan": False})
-    return book_list
+    
 
 def printbook_list():
-    book_list = loadbook_list()
     for book in book_list:
-        print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {book['ID']} {str(book['onloan'])}")
-        printbook_list()
+        print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(30)} {str(book['onloan'])}")
+        
 
 
 
 
-print("\nCan't find what you're looking for, try here")
-#general_search()
+
 
   
