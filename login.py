@@ -5,25 +5,25 @@ import librarian_menu
 
 
 active_user=""
+user_list = user_file.user_list
 
 def clear_screen():
     os.system('cls')
    
 
-def login_menu(user_list):
+def login_menu():
     clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
     print(" 2:  User Registration")
     choice=int(input("Enter your choice:  "))
     if(choice==1):
-      user_login(user_list)
+      user_login()
     elif(choice==2):
        newRegistration()
 
 
-def user_login(user_list):
-    user_list=user_list
+def user_login():
     found=False
     user_name=input("Enter Username:  ")
     for user in user_list:
@@ -40,7 +40,7 @@ def user_login(user_list):
           
     if (found==True):
         print("Login Sucesssful")
-        if (status=="True"): 
+        if (status==True): 
            librarian_menu.display_librarian_menu()
            print("")
         else:

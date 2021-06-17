@@ -1,9 +1,10 @@
 import os
-from search_book import general_search
+import search_book
 import user_file
-import book_list
+import see_list_of_books
 
 user_list = user_file.user_list
+book_list = see_list_of_books.book_list
 
 def clear_screen():
     os.system('cls')
@@ -25,7 +26,7 @@ def display_librarian_menu():
         if(choice == "1"):
             print("You selected Option one!\n")
             print("===============================")
-            general_search()
+            search_book.general_search()
             input("Return to continue...")
         elif(choice == "2"):
             print("You selected Option two!\n")
