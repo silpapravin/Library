@@ -10,21 +10,21 @@ def clear_screen():
     os.system('cls')
    
 
-def login_menu():
+def login_menu(user_list):
     clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
     print(" 2:  User Registration")
     choice=int(input("Enter your choice:  "))
     if(choice==1):
-      user_login()
+      user_login(user_list)
     elif(choice==2):
        newRegistration()
 
 
-def user_login():
+def user_login(user_list):
+    user_list=user_list
     found=False
-    user_list=user_file.user_list
     user_name=input("Enter Username:  ")
     for user in user_list:
         if (user['Username'].find(user_name)!=-1):
