@@ -32,10 +32,9 @@ def printbook_list():
     book_list = loadbook_list()
     for book in book_list:
         print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {book['ID']} {str(book['onloan'])}")
+        printbook_list()
 
 
-print(f"Welcome {user_list[0]}! take a look at what's available to borrow here:")
-printbook_list()
 
 
 print("\nCan't find what you're looking for, try here")
