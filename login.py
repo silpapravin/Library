@@ -3,6 +3,9 @@ import users
 import user_menu
 import librarian_menu
 
+
+active_user=""
+
 def clear_screen():
     os.system('cls')
    
@@ -15,8 +18,9 @@ def login_menu():
     choice=int(input("Enter your choice:  "))
     if(choice==1):
       user_login()
-    else:
-      print("Contact your library for new registration")
+    elif(choice==2):
+       newRegistration()
+
 
 def user_login():
     found=False
@@ -28,6 +32,7 @@ def user_login():
            if (user['Password'].find(pass_word)!=-1):
               found=True
               status=user['isLibrarian']
+              active_user=user['Username']
               break
            else:
                found=False
@@ -46,7 +51,21 @@ def user_login():
         #user_login()
     return
 
+def newRegistration():
+    user_list=users.user_list()
+    count=len(user_list)
+    count=count+1
+    print(" Enter registration details")
+    print("ID Number :", count)
+    user_name=input("Enter a username :")
+    pass_word=input("Enter a password :")
+    firstname=input("Enter First Name :")
+    surname=input("Enter Surname :")
+    books=[]
+    users.userList.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
+    print("New customer registered")
+
 #calling function
         
-
+#login_menu()
 
