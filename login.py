@@ -67,7 +67,8 @@ def newRegistration():
     surname=input("Enter Surname :")
     books=[]
     user_list.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
-    print("New customer registered and it may take 24 hours to activate your account ")
+    print("Welcome  ",firstname)
+    print("Your registration is successful and it may take 24 hours to activate your account ")
 
 #calling function
         
