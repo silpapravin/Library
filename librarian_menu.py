@@ -1,9 +1,9 @@
 import os
-from searchBook import general_search
-import Users
-import booklist
+from search_book import general_search
+import users
+import book_list
 
-user_list = Users.user_list
+user_list = users.user_list
 
 def clear_screen():
     os.system('cls')
@@ -14,7 +14,7 @@ def display_librarian_menu():
     print("1. Search a book")
     print("2. See What books are borrowed")
     print("3. See See What books are overdue")
-    print("4. See library Users")
+    print("4. See library users")
     print("5.See all books")
     print("6. Exit\n")
     

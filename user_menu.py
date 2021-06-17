@@ -1,5 +1,5 @@
 import os
-import searchBook
+import search_book
 
 def clear_screen():
     os.system('cls')
@@ -19,7 +19,7 @@ def display_user_menu():
         clear_screen()
     if(choice == "1"):
         print("You selected Option one!\n")
-        searchBook.general_search()
+        search_book.general_search()
         input("Return to continue...")
     elif(choice == "2"):
         print("You selected Option two!\n")

@@ -1,4 +1,4 @@
-import booklist
+import book_list
 
 user_list = []
 
@@ -12,7 +12,7 @@ user_list.append({"IDNumber": "06", "isLibrarian": False, "Username": "DeclanKen
 user_list.append({"IDNumber": "07", "isLibrarian": True, "Username": "RyleeLynch", "Password": "0415", "Name":"Rylee", "Surname": "Lynch", "BorrewedBooks":[1234, 5664]})
 
 def display_users():
-    print("Library Users:")
+    print("Library users:")
     print("=====================================================================================================")
     print(f"Id".ljust(8), "Username".ljust(20), "Name".ljust(20), "Surname".ljust(20), "Borrewed Books".ljust(10)) 
     print("=====================================================================================================")
@@ -28,7 +28,7 @@ display_users()
 #Display Currently Borrowing Books:
 def currently_borrowing(): 
     print("\n\n===================================================================================================================")
-    print("Users with Borrowed Books:")
+    print("users with Borrowed Books:")
     print("===================================================================================================================")
     print(f"ID".ljust(8), "Username".ljust(20), "Name".ljust(20), "Surname".ljust(20), "Borrewed Books".ljust(10)) 
     print("===================================================================================================================")

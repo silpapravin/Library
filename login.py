@@ -1,7 +1,7 @@
 import os
-import Users
-import usermenu
-import librarianmenu
+import users
+import user_menu
+import librarian_menu
 
 def clear_screen():
     os.system('cls')
@@ -20,7 +20,7 @@ def login_menu():
 
 def user_login():
     found=False
-    user_list=Users.user_list
+    user_list=users.user_list
     user_name=input("Enter Username:  ")
     for user in user_list:
         if (user['Username'].find(user_name)!=-1):
@@ -36,10 +36,10 @@ def user_login():
     if (found==True):
         print("Login Sucesssful")
         if (status=="True"): 
-           librarianmenu.display_librarian_menu()
+           librarian_menu.display_librarian_menu()
            print("")
         else:
-            usermenu.display_user_menu()
+            user_menu.display_user_menu()
             print("")
     else:
         print("Login Unsuccessful")

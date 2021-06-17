@@ -1,4 +1,4 @@
-import booklist
+import book_list
 
 
 def general_search():
@@ -8,7 +8,7 @@ def general_search():
     print("================================================")
     print("Results:\n")
 
-    for book in booklist:
+    for book in book_list:
         if(book['title'].find(search_term) != -1):
             print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {str(book['onloan'])}")
             search_list += 1
