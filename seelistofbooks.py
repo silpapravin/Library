@@ -1,5 +1,5 @@
 import os
-from searchBook import generalSearch
+from searchBook import general_search
 
 user_list =["Silpa", "Megan", "Bruna", "Sumaya"]
 
@@ -39,6 +39,6 @@ printbooklist()
 
 
 print("\nCan't find what you're looking for, try here")
-generalSearch()
+general_search()
 
   

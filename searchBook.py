@@ -1,7 +1,7 @@
 import booklist
 
 
-def generalSearch():
+def general_search():
     
     searchTerm = input("What would you like to search?\n").capitalize()
     search_list = 0
