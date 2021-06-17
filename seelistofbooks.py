@@ -39,6 +39,7 @@ printbooklist()
 
 
 print("\nCan't find what you're looking for, try here")
+print("============================================")
 generalSearch()
 
   
