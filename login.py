@@ -1,23 +1,26 @@
 import os
-import Users
+import users
+import user_menu
+import librarian_menu
 
-def ClearScreen():
-   os.system('cls')
+def clear_screen():
+    os.system('cls')
+   
 
-def LoginMenu():
-    ClearScreen()
+def login_menu():
+    clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
     print(" 2:  User Registration")
     choice=int(input("Enter your choice:  "))
     if(choice==1):
-      UserLogin()
+      user_login()
     else:
       print("Contact your library for new registration")
 
-def UserLogin():
+def user_login():
     found=False
-    user_list=Users.userList
+    user_list=users.user_list
     user_name=input("Enter Username:  ")
     for user in user_list:
         if (user['Username'].find(user_name)!=-1):
@@ -33,17 +36,17 @@ def UserLogin():
     if (found==True):
         print("Login Sucesssful")
         if (status=="True"): 
-           #DisplayAdminmenu()
+           librarian_menu.display_librarian_menu()
            print("")
         else:
-            #DisplayUsermenu
+            user_menu.display_user_menu()
             print("")
     else:
         print("Login Unsuccessful")
-        #UserLogin()
+        #user_login()
     return
 
 #calling function
         
 
-LoginMenu()
+
