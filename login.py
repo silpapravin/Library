@@ -36,7 +36,7 @@ def user_login():
            if (user['Password'].find(pass_word)!=-1):
               found=True
               status=user['isLibrarian']
-              active_user=user['Username']
+              active_user=user
               break
            else:
                found=False
