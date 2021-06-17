@@ -6,6 +6,7 @@ import librarian_menu
 
 active_user=""
 user_list = user_file.user_list
+count=len(user_list)
 
 def clear_screen():
     os.system('cls')
@@ -21,6 +22,9 @@ def login_menu():
       user_login()
     elif(choice==2):
        newRegistration()
+    else:
+        print("Invalid Entry..Exiting application")
+        exit()
 
 
 def user_login():
@@ -52,7 +56,7 @@ def user_login():
     return
 
 def newRegistration():
-    user_list=user_file.user_list()
+    #user_list=user_file.user_list()
     count=len(user_list)
     count=count+1
     print(" Enter registration details")
@@ -62,10 +66,10 @@ def newRegistration():
     firstname=input("Enter First Name :")
     surname=input("Enter Surname :")
     books=[]
-    user_file.userList.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
-    print("New customer registered")
+    user_list.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
+    print("New customer registered and it may take 24 hours to activate your account ")
 
 #calling function
         
-#login_menu()
+ #login_menu()
 
