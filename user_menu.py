@@ -25,25 +25,25 @@ def display_user_menu():
     #while(choice != "5"):
     clear_screen()
     if(choice == "1"):
-            print("You selected Option one!\n")
-            search_book.general_search()
-            display_user_menu()
+        print("You selected Option one!\n")
+        search_book.general_search()
+        display_user_menu()
     elif(choice == "2"):
-            print("You selected Option two!\n")
-            see_list_of_books.printbook_list()
-            input("Return to continue...")
-            display_user_menu()
+        print("You selected Option two!\n")
+        see_list_of_books.printbook_list()
+        input("Return to continue...")
+        display_user_menu()
         
     elif(choice == "3"):
-            print("You selected Option three!\n")
-            input("Return to continue...")
-            display_user_menu()
+        print("You selected Option three!\n")
+        input("Return to continue...")
+        display_user_menu()
             
     elif(choice == "4"):
-            print("You selected Option four!\n")
-            input("Return to continue...")
-            display_user_menu()
-            
+        print("You selected Option four!\n")
+        input("Return to continue...")
+        display_user_menu()
+               
     elif(choice == "5"):
         print("Bye!")
 
