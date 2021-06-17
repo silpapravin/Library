@@ -47,10 +47,11 @@ def display_librarian_menu():
             print("You selected Option five!\n")
             see_list_of_books.printbook_list()
             input("Return to continue...")
-            display_librarian_menu()
-        elif(choice != "6"):
-            print("Please return to menu and select a digit from 1 to 6")
-            ("Return to continue...")
+            display_librarian_menu()        
+        elif(choice == "6"):
+            print("Bye!")
+        else:
+            print("Please return to menu and select a digit from 1 to 5")
+            input("Return to continue...")
             display_librarian_menu()
 
-    print("Bye!")

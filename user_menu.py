@@ -22,33 +22,34 @@ def display_user_menu():
     
     choice= input("Please choose an option (1-5): \n")
       
-    while(choice != "5"):
-        clear_screen()
-        if(choice == "1"):
+    #while(choice != "5"):
+    clear_screen()
+    if(choice == "1"):
             print("You selected Option one!\n")
             search_book.general_search()
-            choice=0
             display_user_menu()
-        elif(choice == "2"):
+    elif(choice == "2"):
             print("You selected Option two!\n")
             see_list_of_books.printbook_list()
             input("Return to continue...")
             display_user_menu()
         
-        elif(choice == "3"):
+    elif(choice == "3"):
             print("You selected Option three!\n")
             input("Return to continue...")
             display_user_menu()
             
-        elif(choice == "4"):
+    elif(choice == "4"):
             print("You selected Option four!\n")
             input("Return to continue...")
             display_user_menu()
             
-        elif(choice != "5"):
-            print("Please return to menu and select a digit from 1 to 5")
-            input("Return to continue...")
-            display_user_menu()
-            check_option(display_user_menu)
-    print("Bye!")
+    elif(choice == "5"):
+        print("Bye!")
+
+    else:
+        print("Please return to menu and select a digit from 1 to 5")
+        input("Return to continue...")
+        display_user_menu()
+
     
