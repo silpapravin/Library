@@ -1,31 +1,31 @@
 import os
-from searchBook import generalSearch
-import Users
-import booklist
+from search_book import general_search
+import user_file
+import book_list
 
-user_list = Users.userList
+user_list = user_file.user_list
 
-def clearScreen():
+def clear_screen():
     os.system('cls')
 
-def displayLibrarianMenu():
-    clearScreen()
-    print(f"Welcome again {user_list[0]}, Menu options:")
+def display_librarian_menu():
+    clear_screen()
+    print(f"Welcome again #####name, Menu options:")
     print("1. Search a book")
     print("2. See What books are borrowed")
     print("3. See See What books are overdue")
-    print("4. See library Users")
+    print("4. See library users")
     print("5.See all books")
     print("6. Exit\n")
     
     choice= input("Please choose an option (1-6): \n")
 
     while(choice != "6"):
-        clearScreen()
+        clear_screen()
         if(choice == "1"):
             print("You selected Option one!\n")
             print("===============================")
-            generalSearch()
+            general_search()
             input("Return to continue...")
         elif(choice == "2"):
             print("You selected Option two!\n")

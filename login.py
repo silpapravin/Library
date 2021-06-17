@@ -1,26 +1,30 @@
 import os
-import Users
-import usermenu
-import librarianmenu
+import user_file
+import user_menu
+import librarian_menu
 
-def ClearScreen():
+
+active_user=""
+
+def clear_screen():
     os.system('cls')
    
 
-def LoginMenu():
-    ClearScreen()
+def login_menu():
+    clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
     print(" 2:  User Registration (not supported)")
     choice=int(input("Enter your choice:  "))
     if(choice==1):
-      UserLogin()
-    else:
-      print("Contact your library for new registration")
+      user_login()
+    elif(choice==2):
+       newRegistration()
 
-def UserLogin():
+
+def user_login():
     found=False
-    user_list=Users.userList
+    user_list=user_file.user_list
     user_name=input("Enter Username:  ")
     for user in user_list:
         if (user['Username'].find(user_name)!=-1):
@@ -28,6 +32,7 @@ def UserLogin():
            if (user['Password'].find(pass_word)!=-1):
               found=True
               status=user['isLibrarian']
+              active_user=user['Username']
               break
            else:
                found=False
@@ -36,17 +41,31 @@ def UserLogin():
     if (found==True):
         print("Login Sucesssful")
         if (status=="True"): 
-           librarianmenu.displayLibrarianMenu()
+           librarian_menu.display_librarian_menu()
            print("")
         else:
-            usermenu.displayUserMenu()
+            user_menu.display_user_menu()
             print("")
     else:
         print("Login Unsuccessful")
-        #UserLogin()
+        #user_login()
     return
+
+def newRegistration():
+    user_list=user_file.user_list()
+    count=len(user_list)
+    count=count+1
+    print(" Enter registration details")
+    print("ID Number :", count)
+    user_name=input("Enter a username :")
+    pass_word=input("Enter a password :")
+    firstname=input("Enter First Name :")
+    surname=input("Enter Surname :")
+    books=[]
+    user_file.userList.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
+    print("New customer registered")
 
 #calling function
         
-
+#login_menu()
 

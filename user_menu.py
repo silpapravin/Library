@@ -1,11 +1,11 @@
 import os
-import searchBook
+import search_book
 
-def clearScreen():
+def clear_screen():
     os.system('cls')
 
-def displayUserMenu():
-    clearScreen()
+def display_user_menu():
+    clear_screen()
     print(f"Welcome to the library, Menu options:")
     print("1. Search a book")
     print("2. See list of books")
@@ -16,10 +16,10 @@ def displayUserMenu():
     choice= input("Please choose an option (1-5): \n")
 
     while(choice != "5"):
-        clearScreen()
+        clear_screen()
     if(choice == "1"):
         print("You selected Option one!\n")
-        searchBook.generalSearch()
+        search_book.general_search()
         input("Return to continue...")
     elif(choice == "2"):
         print("You selected Option two!\n")
