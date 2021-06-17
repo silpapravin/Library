@@ -20,7 +20,7 @@ def display_users():
     for user in user_list:
         print(f"{user['IDNumber'].ljust(8)} {user['Username'].ljust(20)} {user['Name'].ljust(20)} {user['Surname'].ljust(20)} {str(user['BorrewedBooks']).ljust(10)}") 
 
-display_users()
+#display_users()
 
 
 
@@ -38,4 +38,4 @@ def currently_borrowing():
             print(f"{user['IDNumber'].ljust(8)} {user['Username'].ljust(20)} {user['Name'].ljust(20)} {user['Surname'].ljust(20)} {str(user['BorrewedBooks']).ljust(10)}") 
             #print("===================================================================================================================")
 
-currently_borrowing ()
+#currently_borrowing ()
