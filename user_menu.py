@@ -11,9 +11,9 @@ book_list = see_list_of_books.book_list
 def clear_screen():
     os.system('cls')
 
-def display_user_menu():
+def display_user_menu(user):
     clear_screen()
-    print(f"Welcome to the library, Menu options:")
+    print(f"Welcome to the library {user['Name']}, Menu options:")
     print("1. Search a book")
     print("2. See list of books")
     print("3. See What I am currently borrowing")
@@ -27,22 +27,22 @@ def display_user_menu():
     if(choice == "1"):
         print("You selected Option one!\n")
         search_book.general_search()
-        display_user_menu()
+        display_user_menu(user)
     elif(choice == "2"):
         print("You selected Option two!\n")
         see_list_of_books.printbook_list()
         input("Return to continue...")
-        display_user_menu()
+        display_user_menu(user)
         
     elif(choice == "3"):
         print("You selected Option three!\n")
         input("Return to continue...")
-        display_user_menu()
+        display_user_menu(user)
             
     elif(choice == "4"):
         print("You selected Option four!\n")
         input("Return to continue...")
-        display_user_menu()
+        display_user_menu(user)
                
     elif(choice == "5"):
         print("Bye!")
@@ -50,6 +50,6 @@ def display_user_menu():
     else:
         print("Please return to menu and select a digit from 1 to 5")
         input("Return to continue...")
-        display_user_menu()
+        display_user_menu(user)
 
     
