@@ -27,6 +27,11 @@ def loadbook_list():
     
 
 def printbook_list():
+    print("Library Book List:")
+    print("=======================================================================================================================")
+    print(f"Title".ljust(50), "Author".ljust(30), "ID".ljust(30), "Currently on Loan:") 
+    print("=======================================================================================================================")
+    
     for book in book_list:
         print(f"{book['title'].ljust(50)} {book['author'].ljust(30)} {book['ID'].ljust(30)} {str(book['onloan'])}")
         

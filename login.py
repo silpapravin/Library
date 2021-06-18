@@ -1,39 +1,41 @@
-import os
-import user_file
-import user_menu
-import librarian_menu
 
-
-active_user=""
-user_list = user_file.user_list
-count=len(user_list)
 
 def clear_screen():
     os.system('cls')
    
 
 def login_menu():
-    clear_screen()
+    #clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
+<<<<<<< HEAD
     print(" 2:  User Registration (not supported)")
     choice=int(input("Enter your choice:  "))
     if(choice==1):
+=======
+    print(" 2:  User Registration")
+    choice=(input("Enter your choice:  "))
+    if(choice=="1"):
+>>>>>>> a03527a59d33b5eae909b866cffa69937f46fd62
       user_login()
-    elif(choice==2):
+    elif(choice=="2"):
        newRegistration()
     else:
-        print("Invalid Entry..Exiting application")
-        exit()
+        answer=str(input("Invalid Entry..Do you want to try again? [Y/N]"))
+        answer=answer.upper()
+        if (answer=="Y"):
+          login_menu()
+        else:
+           exit()
 
 
 def user_login():
     found=False
     user_name=input("Enter Username:  ")
     for user in user_list:
-        if (user['Username'].find(user_name)!=-1):
+        if (user['Username']==user_name):
            pass_word=input("Enter password:  ")
-           if (user['Password'].find(pass_word)!=-1):
+           if (user['Password']==pass_word):
               found=True
               status=user['isLibrarian']
               active_user=user
@@ -66,11 +68,12 @@ def newRegistration():
     firstname=input("Enter First Name :")
     surname=input("Enter Surname :")
     books=[]
-    user_list.append({"IDNumber": "count", "isLibrarian": False, "Username": "user_name", "Password": "pass_word", "Name":"firstname", "Surname": "surname", "BorrewedBooks":[]})
+    user_list.append({"IDNumber": count, "isLibrarian": False, "Username": user_name, "Password": pass_word, "Name":firstname, "Surname": surname, "BorrewedBooks":[]})
     print("Welcome  ",firstname)
-    print("Your registration is successful and it may take 24 hours to activate your account ")
-
+    print("Please Login to your account")
+    user_login()
+    
 #calling function
         
- #login_menu()
+#login_menu()
 
