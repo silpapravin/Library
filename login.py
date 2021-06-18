@@ -1,4 +1,12 @@
+import os
+import user_file
+import user_menu
+import librarian_menu
 
+
+active_user=""
+user_list = user_file.user_list
+count=len(user_list)
 
 def clear_screen():
     os.system('cls')
@@ -8,15 +16,9 @@ def login_menu():
     #clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
-<<<<<<< HEAD
-    print(" 2:  User Registration (not supported)")
-    choice=int(input("Enter your choice:  "))
-    if(choice==1):
-=======
     print(" 2:  User Registration")
     choice=(input("Enter your choice:  "))
     if(choice=="1"):
->>>>>>> a03527a59d33b5eae909b866cffa69937f46fd62
       user_login()
     elif(choice=="2"):
        newRegistration()
@@ -76,4 +78,3 @@ def newRegistration():
 #calling function
         
 #login_menu()
-
