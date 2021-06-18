@@ -13,18 +13,22 @@ def clear_screen():
    
 
 def login_menu():
-    clear_screen()
+    #clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
     print(" 2:  User Registration")
-    choice=int(input("Enter your choice:  "))
-    if(choice==1):
+    choice=(input("Enter your choice:  "))
+    if(choice=="1"):
       user_login()
-    elif(choice==2):
+    elif(choice=="2"):
        newRegistration()
     else:
-        print("Invalid Entry..Exiting application")
-        exit()
+        answer=str(input("Invalid Entry..Do you want to try again? [Y/N]"))
+        answer=answer.upper()
+        if (answer=="Y"):
+          login_menu()
+        else:
+           exit()
 
 
 def user_login():
