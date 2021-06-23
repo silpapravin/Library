@@ -40,6 +40,7 @@ def user_login():
            if (user['Password']==pass_word):
               found=True
               status=user['isLibrarian']
+              global active_user
               active_user=user
               break
            else:
@@ -49,10 +50,10 @@ def user_login():
     if (found==True):
         print("Login Sucesssful")
         if (status==True): 
-           librarian_menu.display_librarian_menu()
+           librarian_menu.display_librarian_menu(active_user)
            print("")
         else:
-            user_menu.display_user_menu()
+            user_menu.display_user_menu(active_user)
             print("")
     else:
         print("Login Unsuccessful")
