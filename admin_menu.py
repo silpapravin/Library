@@ -1,5 +1,8 @@
 from datastore import Datastore
-import 
+from search import general_search
+from search import print_borrowed_book_list
+from search import display_users
+from search import print_book_list
 import menu
 
 class AdminMenu(menu):     
@@ -22,11 +25,11 @@ class AdminMenu(menu):
         if(choice == "1"):
             print("You selected Option one!\n")
             print("===============================")
-            search_book.general_search()
+            general_search()
             self.display_librarian_menu(user)
         elif(choice == "2"):
             print("You selected Option two!\n")
-            display.print_borrowed_book_list()
+            print_borrowed_book_list()
             input("Return to continue...")
             self.display_librarian_menu(user)
         elif (choice == "3"):
@@ -35,12 +38,12 @@ class AdminMenu(menu):
             self.display_librarian_menu(user)
         elif(choice == "4"):
             print("You selected Option four!\n")
-            Datastore.loaduser_list()
+            display_users()
             input("Return to continue...")
             self.display_librarian_menu(user)
         elif(choice == "5"):
             print("You selected Option five!\n")
-            Datastore.loadbook_list()
+            print_book_list
             input("Return to continue...")
             self.display_librarian_menu(user)        
         elif(choice == "6"):

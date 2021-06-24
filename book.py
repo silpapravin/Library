@@ -2,6 +2,7 @@
 class Book: 
 
     def __init__(self, title, author, book_id, on_loan, date_loaned):
+        
         self._title = title
         self._author = author 
         self._book_id = book_id
