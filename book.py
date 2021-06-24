@@ -41,3 +41,5 @@ class Book:
         self._date_loaned = new_date_loaned
 
 
+    def description(self):
+            return f"Book:       {str(self._book_id).ljust(4)} {self._title.ljust(20)} {self._author.ljust(25)}"

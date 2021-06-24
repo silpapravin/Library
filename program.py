@@ -1,3 +1,3 @@
-import LoginMenu
+from login_methods import login_menu
 
-LoginMenu.show_menu()
+login_menu()
