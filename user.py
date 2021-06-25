@@ -1,6 +1,6 @@
 class User:
     #constructor
-    def __init(self, username, password, id, name, borrowing, borrowed, is_librarian):
+    def __init__(self, username, password, id, name, borrowing, borrowed, is_librarian):
         self.__username=username
         self.__password=password
         self.__id=id
