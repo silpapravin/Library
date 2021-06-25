@@ -1,4 +1,4 @@
-from book import Book
+
 from util import Util
 from datastore import book_list
 from datastore import user_list
@@ -8,7 +8,7 @@ class Search:
     @staticmethod
     def general_search(book_list):
             Util.clear_screen()
-            print(book_list)
+            #print(book_list)
             search_term = input("What would you like to search?\n").lower()
             search_list = []
             print("================================================")
@@ -31,16 +31,16 @@ class Search:
             input("Return to continue...")
 
 
-    def print_user_list ():
+    def print_user_list (user_list):
         for user in user_list:
             print(user.description())
 
-    def print_borrowed_book_list():
+    def print_borrowed_book_list(book_list):
         for book in book_list:
             if  book.on_loan == True:
                 print(book.description())
 
-    def print_book_list():
+    def print_book_list(book_list):
         for book in book_list:
             print(book.description())
 

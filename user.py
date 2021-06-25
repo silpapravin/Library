@@ -1,6 +1,6 @@
 class User:
     #constructor
-    def __init__(self, username, password, id, name, surname, borrowing, borrowed, is_librarian):
+    def __init__(self, username, password, id, name, surname, borrowing = [], borrowed = [], is_librarian = False):
         self._username=username
         self._password=password
         self._id=id
@@ -77,4 +77,6 @@ class User:
 
 
     def description(self):
-        return f"Users:  {self._id.ljust(10)} {str(self._name).ljust(20)} {str(self._surname).ljust(20)}{self._borrowing.ljust(10)} {str(self._is_librarian).ljust(10)}"
+        return f"Users:  {self._id.ljust(10)} {str(self._name).ljust(20)} {str(self._surname).ljust(20)}{str(self._is_librarian).ljust(10)}"
+
+    

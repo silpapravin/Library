@@ -31,21 +31,21 @@ class LoginMethods():
 
 
     def user_login():
-        found=False
-        
+
+        found=False 
         user_name=input("Enter Username:  ")
         for user in user_list:
             if (user.username==user_name):
                 pass_word=input("Enter password:  ")
-            if (user.password==pass_word):
-                found=True
-                LoginMethods.status=user.is_librarian
-                #global active_user
-                LoginMethods.active_user=user
-                break
-            else:
-                found=False
-                break
+                if (user.password==pass_word):
+                    found=True
+                    LoginMethods.status=user.is_librarian
+                    #global active_user
+                    LoginMethods.active_user=user
+                    break
+                else:
+                    found=False
+                    break
             
         if (found==True):
             print("Login Sucesssful")

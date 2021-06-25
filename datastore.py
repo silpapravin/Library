@@ -1,7 +1,5 @@
 from user import User
 from book import Book
-
-
     
 #create an empty list of users
 user_list = []
@@ -9,20 +7,10 @@ user_list = []
 #create an empty list of books
 book_list = []
 
-
-#dd some sample users
-def add_users():
-    
-    user_list.append(User("SumayaAlmeida", "1234", "001", "Sumaya", "Almeida", "", "", True ))
-    user_list.append(User("AnnaTimoteva", "1234", "002", "Anna", "Timoteva", "", "", False ))
-    user_list.append(User("MeganDavitt", "1234", "003", "Megan", "Davitt", "", "", False ))
-    user_list.append(User("EstherJoseph", "1234", "004", "Esther", "Joseph", "", "", False ))
-    user_list.append(User("FergusDeffely", "1234", "001", "Fergus", "Deffely", "", "", True ))
-
 #adding some sample books
 
 def add_books():
-    
+
     book_list.append(Book("The Very Hungry Caterpillar", "Eric Carle","8008", False, "Available"))
     book_list.append(Book("The Giving Tree", "Shel Silverstein", "1002", False, "Available"))
     book_list.append(Book("Green Eggs and Ham", "Dr. Suess", "1200", True, "04/06/2021"))
@@ -41,12 +29,19 @@ def add_books():
     book_list.append(Book("The Little Prince", " Antoine de Saint-Exupéry","5664", True, "24/06/2021"))
     book_list.append(Book("Everything I Know About Love", "Dolly Adlerton", "5536", False, "Available"))
 
+add_books()
 
+
+def add_users():
+    
+    user_list.append(User("SumayaAlmeida", "1234", "001", "Sumaya", "Almeida", "", "", True ))
+    user_list.append(User("AnnaTimoteva", "1234", "002", "Anna", "Timoteva", [book_list[12], book_list[9]], [book_list[9]], False ))
+    user_list.append(User("MeganDavitt", "1234", "003", "Megan", "Davitt", [book_list[2], book_list[3]], [book_list[0], book_list[10]], False ))
+    user_list.append(User("EstherJoseph", "1234", "004", "Esther", "Joseph", [], [], False ))
+    user_list.append(User("FergusDeffely", "1234", "005", "Fergus", "Deffely", "", "", True ))
 
 
 add_users()
-add_books()
-
 
 
 #for user in user_list:
