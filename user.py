@@ -31,8 +31,8 @@ class User:
         return self.__ID
     
     @id.setter 
-    def set_ID(self, new_id):
-        self.__ID = new_id
+    def set_id(self, new_id):
+        self.__id = new_id
         
     @property
     def get_name(self):
