@@ -4,6 +4,12 @@ from menu import Menu
 from user_menu import UserMenu
 import datastore
 
+active_user=""
+user_list = datastore.user_list
+
+
+
+
 class LoginMenu(Menu):
 
     # show method provides the logic for displaying the menu options, 
@@ -40,9 +46,9 @@ class LoginMenu(Menu):
 
             return selection
 
-        def user_login(datastore):
+        def user_login(self,user_list):
                 active_user=""
-                user_list = datastore.user_list
+                user_list = user_list
                 count=len(user_list)
                 found=False
                 user_name=input("Enter Username:  ")
@@ -71,10 +77,10 @@ class LoginMenu(Menu):
                         #user_login()
                 return
         
-        def register_user(self,datastore):
+        def register_user(self,user_list):
             print("Register user")
             #user_list=user_file.user_list()
-            count=len(datastore.user_list)
+            count=len(user_list)
             print(count)
             count=count+1
             print(" Enter registration details")
@@ -83,7 +89,7 @@ class LoginMenu(Menu):
             firstname=input("Enter First Name :")
             surname=input("Enter Surname :")
             books=[]
-            datastore.user_list.append(User(user_name, pass_word, count, firstname, surname, "", "", True ))
+            user_list.append(User(user_name, pass_word, count, firstname, surname, "", "", True ))
             
             print("Welcome  ",firstname)
             print("Please Login to your account")
@@ -99,5 +105,5 @@ class LoginMenu(Menu):
             print(f"check phone number: {phone_number}")
 
 
-#Menu_ = LoginMenu()
-#Menu_.show_menu()
+Menu_ = LoginMenu()
+Menu_.show_menu()
