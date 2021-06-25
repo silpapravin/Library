@@ -51,4 +51,4 @@ class Book:
 
 
     def description(self):
-            return f"Book:       {str(self._book_id).ljust(4)} {self._title.ljust(20)} {self._author.ljust(25)}"
+            return f"Book:       {str(self._book_id).ljust(4)} {self._title.ljust(20)}      {self._author.ljust(25)}   {str(self._on_loan)} {self._date_loaned.ljust(15)}"
