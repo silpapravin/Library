@@ -1,6 +1,7 @@
 from user import User
 from book import Book
 
+
 #create an empty list of users
 user_list = []
 
@@ -19,24 +20,23 @@ def add_users():
 #add some sample books
 
 def add_books():
-    book_list.append(Book("The Very Hungry Caterpillar", "Eric Carle","8008", False, "10/06/2021"))
-    book_list.append(Book("The Giving Tree","Shel Silverstein","1002", False, "11/06/2021"))
-    #book_list.append({"title": "Green Eggs and Ham", "author": "Dr. Suess", "ID": "1200", "onloan": True})
-    #book_list.append({"title": "Goodnight Moon", "author": "Margaret Wise Brown", "ID": "7006", "onloan": True})
-    #book_list.append({"title": "Charlotte's Web", "author": "E.B. White", "ID": "2300", "onloan": False})
-    #book_list.append({"title": "The Lion, The Witch and The Wardrobe", "author": "C.S. Lewis", "ID": "3005", "onloan": True})
-    #book_list.append({"title": "She: A History of Adventure", "author": "H. Rider Haggard", "ID": "6203", "onloan": False})
-    #book_list.append({"title": "Charlotte's Web", "author": "E.B. White", "ID": "8877", "onloan": False})
-    #book_list.append({"title": "Alice's Adventures in Wonderland", "author": "Lewis Carroll","ID": "6556", "onloan": False})
-    #book_list.append({"title": "The Hobbit", "author": "J.R.R. Tolkien", "ID": "4554", "onloan": True})
-    #book_list.append({"title": "And Then There Were None", "author": "Agatha Christie", "ID": "6432", "onloan": False})
-    #book_list.append({"title": "Harry Potter", "author": "J.K. Rowling", "ID": "3221", "onloan": False})
-    #book_list.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry", "ID": "1234", "onloan": True})
-    #book_list.append({"title": "The Lord of The Rings", "author": " J.R.R. Tolkien", "ID": "8899", "onloan": False})
-    #book_list.append({"title": "A Tale of Two Cities", "author": "Charles Dickens", "ID": "3993","onloan": False})
-    #book_list.append({"title": "The Little Prince", "author": " Antoine de Saint-Exupéry","ID": "5664", "onloan": True})
-    #book_list.append({"title": "Everything I Know About Love", "author": "Dolly Adlerton", "ID": "5536", "onloan": False})
-
+    book_list.append(Book("The Very Hungry Caterpillar", "Eric Carle","8008", False, "Available"))
+    book_list.append(Book("The Giving Tree", "Shel Silverstein", "1002", False, "Available"))
+    book_list.append(Book("Green Eggs and Ham", "Dr. Suess", "1200", True, "04/06/2021"))
+    book_list.append(Book("Goodnight Moon", "Margaret Wise Brown", "7006", True, "02/06/2021"))
+    book_list.append(Book("Charlotte's Web", "E.B. White", "2300",  False, "Available"))
+    book_list.append(Book("The Lion, The Witch and The Wardrobe",  "C.S. Lewis",  "3005", True, "29/05/2021"))
+    book_list.append(Book("She: A History of Adventure", "H. Rider Haggard", "6203",  False, "Available"))
+    book_list.append(Book("Charlotte's Web", "E.B. White", "8877", False, "Available"))
+    book_list.append(Book("Alice's Adventures in Wonderland", "Lewis Carroll", "6556", False, "Available"))
+    book_list.append(Book("The Hobbit", "J.R.R. Tolkien", "4554", True, "31/05/2021"))
+    book_list.append(Book("And Then There Were None", "Agatha Christie", "6432", False, "Available"))
+    book_list.append(Book("Harry Potter", "J.K. Rowling", "3221", False, "Available"))
+    book_list.append(Book("The Little Prince", " Antoine de Saint-Exupéry", "1234", True, "01/06/2021"))
+    book_list.append(Book("The Lord of The Rings", "J.R.R. Tolkien", "8899", False, "Available"))
+    book_list.append(Book("A Tale of Two Cities", "Charles Dickens", "3993", False, "Available"))
+    book_list.append(Book("The Little Prince", " Antoine de Saint-Exupéry","5664", True, "24/06/2021"))
+    book_list.append(Book("Everything I Know About Love", "Dolly Adlerton", "5536", False, "Available"))
 
 
 
