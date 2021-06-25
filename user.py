@@ -30,7 +30,7 @@ class User:
     def get_ID(self):
         return self.__ID
     
-    @ID.setter 
+    @id.setter 
     def set_ID(self, new_id):
         self.__ID = new_id
         
