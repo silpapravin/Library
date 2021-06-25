@@ -1,14 +1,13 @@
+from book import Book
+from util import Util
 from datastore import book_list
 from datastore import user_list
-from book import Book
-from menu import Menu
 
 class Search:
 
-    local_book_list = book_list
-
+    @staticmethod
     def general_search(book_list):
-            
+            Util.clear_screen()
             print(book_list)
             search_term = input("What would you like to search?\n").lower()
             search_list = []

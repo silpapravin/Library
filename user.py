@@ -1,10 +1,11 @@
 class User:
     #constructor
-    def __init__(self, username, password, id, name, borrowing, borrowed, is_librarian):
+    def __init__(self, username, password, id, name, surname, borrowing, borrowed, is_librarian):
         self._username=username
         self._password=password
         self._id=id
         self._name=name
+        self._surname=surname
         self._borrowing=borrowing #need to come back to boolean values in constructor and lists
         self._borrowed=borrowed
         self._is_librarian=is_librarian
@@ -41,6 +42,14 @@ class User:
     @name.setter 
     def name(self, new_name):
         self._name = new_name
+    
+    @property
+    def surname(self):
+        return self._surname
+    
+    @surname.setter 
+    def surname(self, new_surname):
+        self._surname = new_surname
         
     @property
     def borrowed(self):
@@ -67,8 +76,5 @@ class User:
         self._is_librarian = new_is_librarian
 
 
-    
-
-
     def description(self):
-        return f"User:       {str(self._username).ljust(10)} {self._password.ljust(20)} {self._id.ljust(10)} {self._name.ljust(20)} {self._borrowing.ljust()} {self.__borrowed.ljust()} {self._is_librarian.ljust()}"
+        return f"Users:  {self._id.ljust(10)} {str(self._name).ljust(20)} {str(self._surname).ljust(20)}{self._borrowing.ljust(10)} {str(self._is_librarian).ljust(10)}"

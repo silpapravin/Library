@@ -1,4 +1,4 @@
-from menu import Menu
-from login_methods import login_menu
+from login_methods import LoginMethods
 
-login_menu(Menu)
+
+LoginMethods.login_menu()

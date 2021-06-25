@@ -13,12 +13,12 @@ class LoginMenu(Menu):
                 selection = "0"
 
                 while(selection != "3"):
-                        self.clearscreen()
+                        self.clear_screen()
                         selection = self.process_user_input()
 
                         # handle the case of invalid menu option selected
                         if(selection not in ["1", "2", "3"]):
-                                self.clearscreen()
+                                self.clear_screen()
                                 print(f"Invalid menu option [{selection}]. Press return to try again.")
                                 input()
 

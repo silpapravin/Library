@@ -46,9 +46,9 @@ class Book:
         return self.date_loaned
 
     @date_loaned.setter
-    def on_loan(self, new_date_loaned):
+    def date_loaned(self, new_date_loaned):
         self._date_loaned = new_date_loaned
 
 
     def description(self):
-            return f"Book:       {str(self._book_id).ljust(4)} {self._title.ljust(50)}    {self._author.ljust(30)}  {str(self._on_loan)} {str(self._date_loaned).ljust(10)}"
+            return f"{str(self._book_id).ljust(6)} {self._title.ljust(45)}{self._author.ljust(25)}  {str(self._on_loan).ljust(8)} {str(self._date_loaned).ljust(10)}"

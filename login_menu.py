@@ -1,6 +1,6 @@
 from admin_menu import AdminMenu
 from user import User
-from menu import Menu
+from util import Util
 from user_menu import UserMenu
 import datastore
 
@@ -8,23 +8,22 @@ active_user=""
 user_list = datastore.user_list
 
 
-
-
-class LoginMenu(Menu):
+class LoginMenu():
 
     # show method provides the logic for displaying the menu options, 
     # getting the user's selection and verifying that selections are valid
 
         def show_menu(self):
+                Util.clear_screen()
                 selection = "0"
 
                 while(selection != "3"):
-                        self.clearscreen()
+                        self.clear_screen()
                         selection = self.process_user_input()
 
                         # handle the case of invalid menu option selected
                         if(selection not in ["1", "2", "3"]):
-                                self.clearscreen()
+                                self.clear_screen()
                                 print(f"Invalid menu option [{selection}]. Press return to try again.")
                                 input()
 

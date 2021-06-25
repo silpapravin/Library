@@ -1,14 +1,15 @@
 from datastore import user_list
-from menu import Menu
-from search import general_search
-from search import print_book_list
+from util import Util
+from search import Search
 
 
-class UserMenu(Menu):
+
+class UserMenu():
+
         
-    
+    @staticmethod
     def display_user_menu(self, user):
-        Menu.clear_screen()
+        Util.clear_screen()
         print(f"Welcome to the library {user.name}, Menu options:")
         print("1. Search a book")
         print("2. See list of books")
@@ -19,14 +20,14 @@ class UserMenu(Menu):
         choice= input("Please choose an option (1-5): \n")
         
         #while(choice != "5"):
-        Menu.clear_screen()
+        Util.clear_screen()
         if(choice == "1"):
             print("You selected Option one!\n")
-            general_search()
+            Search.general_search()
             self.display_user_menu(user)
         elif(choice == "2"):
             print("You selected Option two!\n")
-            print_book_list()
+            Search.print_book_list()
             input("Return to continue...")
             self.display_user_menu(user)
             
