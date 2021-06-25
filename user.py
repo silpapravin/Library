@@ -1,34 +1,34 @@
 class User:
     #constructor
     def __init__(self, username, password, id, name, borrowing, borrowed, is_librarian):
-        self.__username=username
-        self.__password=password
-        self.__id=id
-        self.__name=name
-        self.__borrowing=borrowing #need to come back to boolean values in constructor and lists
-        self.__borrowed=borrowed
-        self.__is_librarian=is_librarian
+        self._username=username
+        self._password=password
+        self._id=id
+        self._name=name
+        self._borrowing=borrowing #need to come back to boolean values in constructor and lists
+        self._borrowed=borrowed
+        self._is_librarian=is_librarian
 
     #getters and setters
     @property
     def get_username(self):
-        return self.__username
+        return self._username
     
     @username.setter 
     def set_username(self, new_username):
-        self.__username = new_username
+        self._username = new_username
         
     @property
     def get_password(self):
-        return self.__password
+        return self._password
     
     @password.setter 
     def set_password(self, new_password):
-        self.__password = new_password
+        self._password = new_password
      
     @property
-    def get_ID(self):
-        return self.__ID
+    def get_id(self):
+        return self._id
     
     @id.setter 
     def set_id(self, new_id):
@@ -36,7 +36,7 @@ class User:
         
     @property
     def get_name(self):
-        return self.__name
+        return self._name
     
     @name.setter 
     def set_name(self, new_name):
@@ -44,7 +44,7 @@ class User:
         
     @property
     def get_borrowed(self):
-        return self.__borrowed
+        return self._borrowed
     
     @borrowed.setter 
     def set_borrowed(self, new_borrowed):
@@ -52,7 +52,7 @@ class User:
         
     @property
     def get_borrowing(self):
-        return self.__borrowing
+        return self._borrowing
     
     @borrowing.setter 
     def set_borrowing(self, new_borrowing):
@@ -60,7 +60,7 @@ class User:
         
     @property
     def get_is_librarian(self):
-        return self.__is_librarian
+        return self._is_librarian
     
     @is_librarian.setter 
     def set_is_librarian(self,new_is_librarian):
