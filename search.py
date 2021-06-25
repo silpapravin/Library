@@ -1,19 +1,22 @@
-import datastore
+from datastore import book_list
+from book import Book
 
 class Search:
 
+       
+    def general_search(book_list):
         
-    def general_search():
-        
-
-            search_term = input("What would you like to search?\n").capitalize()
+            print(book_list)
+            search_term = input("What would you like to search?\n").lower()
             search_list = 0
             print("================================================")
             print("Results:\n")
 
-            for book in datastore.book_list:
-                if(book['title'].find(search_term) != -1):
-                    print(f"{book['title'].ljust(30)} {book['author'].ljust(20)} {str(book['onloan'])}")
+            for book in book_list:
+                book_title = str(getattr(book,'title')).lower()
+                if(book_title.find(search_term) != -1):
+                    print(book.description())
+                    #print(f"{str(getattr(book,'title')).ljust(30)} {str(getattr(book,'author')).ljust(20)} {str(getattr(book,'on_loan'))}")
                     search_list += 1
                 else:
                     continue
@@ -23,7 +26,7 @@ class Search:
 
             input("Return to continue...")
 
-    #general_search() 
+    general_search(book_list) 
 
 
     def print_user_list ():
