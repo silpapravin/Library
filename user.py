@@ -71,4 +71,4 @@ class User:
 
 
     def description(self):
-        return f"User:       {str(self.__username).ljust(10)} {self.__password.ljust(20)} {self.__id.ljust(10)} {self.__name.ljust(20)} {self.__borrowing.ljust()} {self.__borrowed.ljust()} {self.__is_librarian.ljust()}"
+        return f"User:       {str(self._username).ljust(10)} {self._password.ljust(20)} {self._id.ljust(10)} {self._name.ljust(20)} {self._borrowing.ljust()} {self.__borrowed.ljust()} {self._is_librarian.ljust()}"
