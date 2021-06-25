@@ -19,7 +19,7 @@ class User:
         self._username = new_username
         
     @property
-    def get_password(self):
+    def password(self):
         return self._password
     
     @password.setter 
@@ -43,7 +43,7 @@ class User:
         self._name = new_name
         
     @property
-    def get_borrowed(self):
+    def borrowed(self):
         return self._borrowed
     
     @borrowed.setter 
