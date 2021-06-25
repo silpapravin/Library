@@ -11,11 +11,11 @@ class User:
 
     #getters and setters
     @property
-    def get_username(self):
+    def username(self):
         return self._username
     
     @username.setter 
-    def set_username(self, new_username):
+    def username(self, new_username):
         self._username = new_username
         
     @property
@@ -23,23 +23,23 @@ class User:
         return self._password
     
     @password.setter 
-    def set_password(self, new_password):
+    def password(self, new_password):
         self._password = new_password
      
     @property
-    def get_id(self):
+    def id(self):
         return self._id
     
     @id.setter 
-    def set_id(self, new_id):
+    def id(self, new_id):
         self.__id = new_id
         
     @property
-    def get_name(self):
+    def name(self):
         return self._name
     
     @name.setter 
-    def set_name(self, new_name):
+    def name(self, new_name):
         self.__name = new_name
         
     @property
@@ -47,23 +47,23 @@ class User:
         return self._borrowed
     
     @borrowed.setter 
-    def set_borrowed(self, new_borrowed):
+    def borrowed(self, new_borrowed):
         self.__borrowed = new_borrowed
         
     @property
-    def get_borrowing(self):
+    def borrowing(self):
         return self._borrowing
     
     @borrowing.setter 
-    def set_borrowing(self, new_borrowing):
+    def borrowing(self, new_borrowing):
         self.__borrowing = new_borrowing
         
     @property
-    def get_is_librarian(self):
+    def is_librarian(self):
         return self._is_librarian
     
     @is_librarian.setter 
-    def set_is_librarian(self,new_is_librarian):
+    def is_librarian(self,new_is_librarian):
         self.__is_librarian = new_is_librarian
 
 
