@@ -44,8 +44,8 @@ def add_books():
 add_users()
 add_books()
 
-for user in user_list:
-    print(user.description())
+#for user in user_list:
+    #print(user.description())
 
-for book in book_list:
-    print(book.description())
+#for book in book_list:
+    #print(book.description())

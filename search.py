@@ -1,4 +1,5 @@
 from datastore import book_list
+from datastore import user_list
 from book import Book
 from menu import Menu
 
@@ -32,18 +33,22 @@ class Search:
 
 
     def print_user_list ():
-        print()
+        for user in user_list:
+            print(user.description())
 
     def print_borrowed_book_list():
-        print()
+        for book in book_list:
+            if  book.on_loan == True:
+                print(book.description())
 
     def print_book_list():
-        print()
+        for book in book_list:
+            print(book.description())
 
     def display_users():
         print()
 
-    general_search(local_book_list) 
+    #general_search(local_book_list) 
     #print(local_book_list)
 
     #checking access to attibutes

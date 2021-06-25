@@ -1,12 +1,13 @@
-import menu
-import datastore
+from menu import Menu
+from datastore import user_list
+from admin_menu import display_librarian_menu
+from user_menu import display_user_menu
 
 active_user=""
-user_list = datastore.user_list
 count=len(user_list)
 
 
-def login_menu(menu):
+def login_menu(Menu):
     #clear_screen()
     print("Menu Options")
     print(" 1:  User Login")
@@ -29,7 +30,7 @@ def user_login():
     found=False
     user_name=input("Enter Username:  ")
     for user in user_list:
-        if (user['Username']==user_name):
+        if (str(getattr(user, 'username'))==user_name):
            pass_word=input("Enter password:  ")
            if (user['Password']==pass_word):
               found=True
@@ -44,10 +45,10 @@ def user_login():
     if (found==True):
         print("Login Sucesssful")
         if (status==True): 
-           librarian_menu.display_librarian_menu(active_user)
+           display_librarian_menu(active_user)
            print("")
         else:
-            user_menu.display_user_menu(active_user)
+            display_user_menu(active_user)
             print("")
     else:
         print("Login Unsuccessful")
