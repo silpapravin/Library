@@ -32,7 +32,7 @@ class User:
     
     @id.setter 
     def id(self, new_id):
-        self.__id = new_id
+        self._id = new_id
         
     @property
     def name(self):
@@ -40,7 +40,7 @@ class User:
     
     @name.setter 
     def name(self, new_name):
-        self.__name = new_name
+        self._name = new_name
         
     @property
     def get_borrowed(self):
@@ -48,7 +48,7 @@ class User:
     
     @borrowed.setter 
     def borrowed(self, new_borrowed):
-        self.__borrowed = new_borrowed
+        self._borrowed = new_borrowed
         
     @property
     def borrowing(self):
@@ -56,7 +56,7 @@ class User:
     
     @borrowing.setter 
     def borrowing(self, new_borrowing):
-        self.__borrowing = new_borrowing
+        self._borrowing = new_borrowing
         
     @property
     def is_librarian(self):
@@ -64,7 +64,7 @@ class User:
     
     @is_librarian.setter 
     def is_librarian(self,new_is_librarian):
-        self.__is_librarian = new_is_librarian
+        self._is_librarian = new_is_librarian
 
 
     
