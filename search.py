@@ -1,7 +1,8 @@
 
 from util import Util
-from datastore import book_list
-from datastore import user_list
+# from datastore import book_list
+# from datastore import user_list
+from datastore import Datastore
 
 class Search:
 

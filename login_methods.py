@@ -1,46 +1,49 @@
 from util import Util
-from datastore import user_list
+from datastore import Datastore
 from admin_menu import AdminMenu
 from user_menu import UserMenu
 
 class LoginMethods():
     
-    active_user=""
-    count=len(user_list)
-    status=False
 
 
-    def login_menu():
+    def __init__(self):
+        self.active_user=""
+        #count=len(user_list)
+        self.status=False
+
+
+    def login_menu(self, datastore):
         Util.clear_screen()
         print("Menu Options")
         print(" 1:  User Login")
         print(" 2:  User Registration")
         choice=(input("Enter your choice:  "))
         if(choice=="1"):
-            LoginMethods.user_login()
+            self.user_login(datastore)
         elif(choice=="2"):
-            LoginMethods.newRegistration()
+            self.newRegistration(datastore)
         else:
             answer=str(input("Invalid Entry..Do you want to try again? [Y/N]"))
             answer=answer.upper()
             if (answer=="Y"):
-                LoginMethods.login_menu()
+                self.login_menu()
             else:
                 exit()
 
 
-    def user_login():
+    def user_login(self, datastore):
 
         found=False 
         user_name=input("Enter Username:  ")
-        for user in user_list:
+        for user in datastore.user_list:
             if (user.username==user_name):
                 pass_word=input("Enter password:  ")
                 if (user.password==pass_word):
                     found=True
-                    LoginMethods.status=user.is_librarian
+                    self.status=user.is_librarian
                     #global active_user
-                    LoginMethods.active_user=user
+                    self.active_user=user
                     break
                 else:
                     found=False
@@ -48,22 +51,24 @@ class LoginMethods():
             
         if (found==True):
             print("Login Sucesssful")
-            print(LoginMethods.active_user.description)
-            if (LoginMethods.status==True): 
-                AdminMenu.display_librarian_menu(LoginMethods.active_user)
+            print(self.active_user.description())
+            if (self.status==True):
+                admin_menu = AdminMenu() 
+                admin_menu.display_librarian_menu(self.active_user)
                 print("")
 
             else:
-                UserMenu.display_user_menu(LoginMethods.active_user)
+                user_menu = UserMenu()
+                user_menu.display_user_menu(self.active_user, datastore)
                 print("")
         else:
             print("Login Unsuccessful")
             #user_login()
         return
 
-    def newRegistration():
+    def newRegistration(self, datastore):
         #user_list=user_file.user_list()
-        count=len(user_list)
+        count=len(datastore.user_list)
         count=count+1
         print(" Enter registration details")
         print("ID Number :", count)
@@ -72,10 +77,10 @@ class LoginMethods():
         firstname=input("Enter First Name :")
         surname=input("Enter Surname :")
         books=[]
-        user_list.append({"IDNumber": count, "isLibrarian": False, "Username": user_name, "Password": pass_word, "Name":firstname, "Surname": surname, "BorrewedBooks":[]})
+        datastore.user_list.append({"IDNumber": count, "isLibrarian": False, "Username": user_name, "Password": pass_word, "Name":firstname, "Surname": surname, "BorrewedBooks":[]})
         print("Welcome  ",firstname)
         print("Please Login to your account")
-        LoginMethods.user_login()
+        self.user_login(datastore)
         
     #calling function
             

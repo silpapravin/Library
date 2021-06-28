@@ -1,12 +1,11 @@
 from util import Util
 from search import Search
-from datastore import book_list
-
+#from datastore import book_list
+from datastore import Datastore
 
 class UserMenu():
       
-    @staticmethod
-    def display_user_menu(user):
+    def display_user_menu(self, user, datastore):
         Util.clear_screen()
         print(f"Welcome to the library {user.name}, Menu options:")
         print("1. Search a book")
@@ -21,27 +20,27 @@ class UserMenu():
         Util.clear_screen()
         if(choice == "1"):
             print("You selected Option one!\n")
-            Search.general_search(book_list)
-            UserMenu.display_user_menu(user)
+            Search.general_search(datastore.book_list)
+            self.display_user_menu(user, datastore)
         elif(choice == "2"):
             print("You selected Option two!\n")
-            Search.print_book_list(book_list)
+            Search.print_book_list(datastore.book_list)
             input("Return to continue...")
-            UserMenu.display_user_menu(user)
+            self.display_user_menu(user, datastore)
             
         elif(choice == "3"):
             print("You selected Option three!\n")
             if len(user.borrowing) > 0:
-                UserMenu.currently_borrowing(user)
+                self.currently_borrowing(user)
             else:
                 print("You are not Borrowing any books")
             input("Return to continue...")
-            UserMenu.display_user_menu(user)
+            self.display_user_menu(user, datastore)
                 
         elif(choice == "4"):
             print("You selected Option four!\n")
             input("Return to continue...")
-            UserMenu.display_user_menu(user)
+            self.display_user_menu(user, datastore)
                 
         elif(choice == "5"):
             print("Bye!")
@@ -49,8 +48,8 @@ class UserMenu():
         else:
             print("Please return to menu and select a digit from 1 to 5")
             input("Return to continue...")
-            UserMenu.display_user_menu(user)
+            self.display_user_menu(user, datastore)
 
-    def currently_borrowing(user):
+    def currently_borrowing(self, user):
         for book in user.borrowing:
-            print(book.description)
+            print(book.description())
