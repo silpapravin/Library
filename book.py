@@ -1,7 +1,7 @@
-
+import datetime
 class Book: 
 
-    def __init__(self, title, author, book_id, on_loan, date_loaned):
+    def __init__(self, title, author, book_id, on_loan, date_loaned = None):
         
         self._title = title
         self._author = author 
@@ -52,3 +52,5 @@ class Book:
 
     def description(self):
             return f"{str(self._book_id).ljust(6)} {self._title.ljust(45)}{self._author.ljust(25)}  {str(self._on_loan).ljust(8)} {str(self._date_loaned).ljust(10)}"
+    
+    

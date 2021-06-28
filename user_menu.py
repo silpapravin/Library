@@ -3,10 +3,8 @@ from search import Search
 from datastore import book_list
 
 
-
 class UserMenu():
-
-        
+      
     @staticmethod
     def display_user_menu(user):
         Util.clear_screen()

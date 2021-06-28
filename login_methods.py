@@ -1,6 +1,5 @@
 from util import Util
 from datastore import user_list
-from datastore import book_list
 from admin_menu import AdminMenu
 from user_menu import UserMenu
 
