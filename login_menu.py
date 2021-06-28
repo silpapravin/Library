@@ -2,6 +2,7 @@ from util import Util
 from datastore import Datastore
 from admin_menu import AdminMenu
 from user_menu import UserMenu
+from user import User
 
 class LoginMethods():
     
@@ -51,7 +52,7 @@ class LoginMethods():
             
         if (found==True):
             print("Login Sucesssful")
-            print(self.active_user.description())
+            
             if (self.status==True):
                 admin_menu = AdminMenu() 
                 admin_menu.display_librarian_menu(self.active_user, datastore)
@@ -67,7 +68,6 @@ class LoginMethods():
         return
 
     def newRegistration(self, datastore):
-        #user_list=user_file.user_list()
         count=len(datastore.user_list)
         count=count+1
         print(" Enter registration details")
@@ -76,8 +76,7 @@ class LoginMethods():
         pass_word=input("Enter a password :")
         firstname=input("Enter First Name :")
         surname=input("Enter Surname :")
-        books=[]
-        datastore.user_list.append({"IDNumber": count, "isLibrarian": False, "Username": user_name, "Password": pass_word, "Name":firstname, "Surname": surname, "BorrewedBooks":[]})
+        datastore.user_list.append(User(user_name, pass_word, count, firstname, surname, [], [], False))
         print("Welcome  ",firstname)
         print("Please Login to your account")
         self.user_login(datastore)

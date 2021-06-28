@@ -1,5 +1,5 @@
 from datastore import Datastore
-from login_methods import LoginMethods
+from login_menu import LoginMethods
 
 datastore = Datastore()
 login_menu = LoginMethods() 

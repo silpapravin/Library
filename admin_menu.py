@@ -4,7 +4,7 @@ from search import Search
 #from search import print_book_list
 from datastore import Datastore
 from util import Util
-
+import datetime
 
 class AdminMenu():     
 
@@ -14,7 +14,7 @@ class AdminMenu():
         print(f"Welcome again {user.name}, Menu options:")
         print("1. Search a book")
         print("2. See What books are borrowed")
-        print("3. See See What books are overdue")
+        print("3. See What books are overdue")
         print("4. See library users")
         print("5.See all books")
         print("6. Exit\n")
@@ -35,6 +35,7 @@ class AdminMenu():
             self.display_librarian_menu(user, datastore)
         elif (choice == "3"):
             print("You selected Option three!\n")
+            self.is_overdue(datastore.book_list)
             input("Return to continue...")
             self.display_librarian_menu(user, datastore)
         elif(choice == "4"):
@@ -54,3 +55,8 @@ class AdminMenu():
             input("Return to continue...")
             self.display_librarian_menu(user, datastore)
 
+    def is_overdue(self, book_list):
+        today = datetime.datetime.now()
+        for book in book_list:
+            if book.on_loan == True:
+                print(today)
