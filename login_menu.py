@@ -1,108 +1,87 @@
-from admin_menu import AdminMenu
-from user import User
 from util import Util
+from datastore import Datastore
+from admin_menu import AdminMenu
 from user_menu import UserMenu
-import datastore
 
-active_user=""
-user_list = datastore.user_list
+class LoginMethods():
+    
 
 
-class LoginMenu():
+    def __init__(self):
+        self.active_user=""
+        #count=len(user_list)
+        self.status=False
 
-    # show method provides the logic for displaying the menu options, 
-    # getting the user's selection and verifying that selections are valid
 
-        def show_menu(self):
-                Util.clear_screen()
-                selection = "0"
+    def login_menu(self, datastore):
+        Util.clear_screen()
+        print("Menu Options")
+        print(" 1:  User Login")
+        print(" 2:  User Registration")
+        choice=(input("Enter your choice:  "))
+        if(choice=="1"):
+            self.user_login(datastore)
+        elif(choice=="2"):
+            self.newRegistration(datastore)
+        else:
+            answer=str(input("Invalid Entry..Do you want to try again? [Y/N]"))
+            answer=answer.upper()
+            if (answer=="Y"):
+                self.login_menu()
+            else:
+                exit()
 
-                while(selection != "3"):
-                        self.clear_screen()
-                        selection = self.process_user_input()
 
-                        # handle the case of invalid menu option selected
-                        if(selection not in ["1", "2", "3"]):
-                                self.clear_screen()
-                                print(f"Invalid menu option [{selection}]. Press return to try again.")
-                                input()
+    def user_login(self, datastore):
 
-    # print the menu and retrieve the users selection and taking the appropriate 
-    # action if the selection is one of the supported options
-
-        def process_user_input(self):
-            print("Menu options:")
-            print("1. Login")
-            print("2. Register")
-            print("3. Exit\n")
-
-            selection = input("Please choose an option (1-3): ")
-
-            if(selection == "1"):
-                self.user_login()
-            elif(selection == "2"):
-                self.register_user()
-
-            return selection
-
-        def user_login(self,user_list):
-                active_user=""
-                user_list = user_list
-                count=len(user_list)
-                found=False
-                user_name=input("Enter Username:  ")
-                for user in user_list:
-                        if (user['Username']==user_name):
-                                pass_word=input("Enter password:  ")
-                        if (user['Password']==pass_word):
-                                found=True
-                                status=user['isLibrarian']
-                                active_user=user
-                                break
-                        else:
-                                found=False
-                        break
-                        
-                if (found==True):
-                        print("Login Sucesssful")
-                        if (status==True): 
-                                AdminMenu.display_librarian_menu(active_user)
-                                print("")
-                        else:
-                                UserMenu.display_user_menu(active_user)
-                        print("")
+        found=False 
+        user_name=input("Enter Username:  ")
+        for user in datastore.user_list:
+            if (user.username==user_name):
+                pass_word=input("Enter password:  ")
+                if (user.password==pass_word):
+                    found=True
+                    self.status=user.is_librarian
+                    #global active_user
+                    self.active_user=user
+                    break
                 else:
-                        print("Login Unsuccessful")
-                        #user_login()
-                return
-        
-        def register_user(self,user_list):
-            print("Register user")
-            #user_list=user_file.user_list()
-            count=len(user_list)
-            print(count)
-            count=count+1
-            print(" Enter registration details")
-            user_name=input("Enter a username :")
-            pass_word=input("Enter a password :")
-            firstname=input("Enter First Name :")
-            surname=input("Enter Surname :")
-            books=[]
-            user_list.append(User(user_name, pass_word, count, firstname, surname, "", "", True ))
+                    found=False
+                    break
             
-            print("Welcome  ",firstname)
-            print("Please Login to your account")
-            self.user_login()
-  
+        if (found==True):
+            print("Login Sucesssful")
+            print(self.active_user.description())
+            if (self.status==True):
+                admin_menu = AdminMenu() 
+                admin_menu.display_librarian_menu(self.active_user, datastore)
+                print("")
+
+            else:
+                user_menu = UserMenu()
+                user_menu.display_user_menu(self.active_user, datastore)
+                print("")
+        else:
+            print("Login Unsuccessful")
+            #user_login()
+        return
+
+    def newRegistration(self, datastore):
+        #user_list=user_file.user_list()
+        count=len(datastore.user_list)
+        count=count+1
+        print(" Enter registration details")
+        print("ID Number :", count)
+        user_name=input("Enter a username :")
+        pass_word=input("Enter a password :")
+        firstname=input("Enter First Name :")
+        surname=input("Enter Surname :")
+        books=[]
+        datastore.user_list.append({"IDNumber": count, "isLibrarian": False, "Username": user_name, "Password": pass_word, "Name":firstname, "Surname": surname, "BorrewedBooks":[]})
+        print("Welcome  ",firstname)
+        print("Please Login to your account")
+        self.user_login(datastore)
         
-        
-
-        def validate_phone_number(self, phone_number):
-            print(f"validate phone number: {phone_number}")
-
-        def check_phone_number(self, phone_number):
-            print(f"check phone number: {phone_number}")
-
-
-Menu_ = LoginMenu()
-Menu_.show_menu()
+    #calling function
+            
+    #login_menu()

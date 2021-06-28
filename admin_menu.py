@@ -8,8 +8,8 @@ from util import Util
 
 class AdminMenu():     
 
-    @staticmethod
-    def display_librarian_menu(user):
+    
+    def display_librarian_menu(self, user, datastore):
         Util.clear_screen()
         print(f"Welcome again {user.name}, Menu options:")
         print("1. Search a book")
@@ -27,30 +27,30 @@ class AdminMenu():
             print("You selected Option one!\n")
             print("===============================")
             Search.general_search(datastore.book_list)
-            AdminMenu.display_librarian_menu(user)
+            self.display_librarian_menu(user, datastore)
         elif(choice == "2"):
             print("You selected Option two!\n")
-            Search.print_borrowed_book_list(book_list)
+            Search.print_borrowed_book_list(datastore.book_list)
             input("Return to continue...")
-            AdminMenu.display_librarian_menu(user)
+            self.display_librarian_menu(user, datastore)
         elif (choice == "3"):
             print("You selected Option three!\n")
             input("Return to continue...")
-            AdminMenu.display_librarian_menu(user)
+            self.display_librarian_menu(user, datastore)
         elif(choice == "4"):
             print("You selected Option four!\n")
-            Search.print_user_list(user_list)
+            Search.print_user_list(datastore.user_list)
             input("Return to continue...")
-            AdminMenu.display_librarian_menu(user)
+            self.display_librarian_menu(user, datastore)
         elif(choice == "5"):
             print("You selected Option five!\n")
-            Search.print_book_list(book_list)
+            Search.print_book_list(datastore.book_list)
             input("Return to continue...")
-            AdminMenu.display_librarian_menu(user)      
+            self.display_librarian_menu(user, datastore)    
         elif(choice == "6"):
             print("Bye!")
         else:
             print("Please return to menu and select a digit from 1 to 5")
             input("Return to continue...")
-            AdminMenu.display_librarian_menu(user)
+            self.display_librarian_menu(user, datastore)
 
