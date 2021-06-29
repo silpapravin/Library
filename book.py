@@ -1,4 +1,3 @@
-import datetime
 class Book: 
 
     def __init__(self, title, author, book_id, on_loan, date_loaned = None):

@@ -4,7 +4,7 @@ from search import Search
 #from search import print_book_list
 from datastore import Datastore
 from util import Util
-import datetime
+from datetime import date
 
 class AdminMenu():     
 
@@ -56,7 +56,9 @@ class AdminMenu():
             self.display_librarian_menu(user, datastore)
 
     def is_overdue(self, book_list):
-        today = datetime.datetime.now()
+        today = date.today()
         for book in book_list:
             if book.on_loan == True:
-                print(today)
+                time_on_loan = today - book._date_loaned
+                if time_on_loan.days > 30:
+                    print(book.description())
