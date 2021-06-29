@@ -59,6 +59,6 @@ class AdminMenu():
         today = date.today()
         for book in book_list:
             if book.on_loan == True:
-                time_on_loan = today - book._date_loaned
+                time_on_loan = today - book.date_loaned
                 if time_on_loan.days > 30:
                     print(book.description())

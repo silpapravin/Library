@@ -42,7 +42,7 @@ class Book:
     
     @property
     def date_loaned(self):
-        return self.date_loaned
+        return self._date_loaned
 
     @date_loaned.setter
     def date_loaned(self, new_date_loaned):
